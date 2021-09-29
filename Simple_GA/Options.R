@@ -1,10 +1,9 @@
-chromosomeLength <- 33    #36 #270 #55 #26 #33
-populationSize <- 10
-maxGeneration <- 150
+chromosomeLength <- 36    #Dejong1 = 36  #Dejong2 = 270  #Dejong3 = 55  #Dejong4 =26  #Dejong5 = 33
+populationSize <- 100
+maxGeneration <- 1000
 probCrossover <- 0.9
 probMutation <- 0.001
 randomSeed <- 200
-chcLambda <- 2
 
 gen <- 0
 infile <- ""

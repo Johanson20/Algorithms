@@ -11,7 +11,7 @@ initializePopulation <- function(popSize = populationSize, chromLen = chromosome
     population[i,] <- initializeIndividual(chromLen)
   }
   startGA <- sprintf("%s %11s %11s %11s %11s", "Generation", "Minimum", "Mean", "Maximum", "Sum")
-  #print(startGA)
+  print(startGA)
   return(population)
 }
 
@@ -20,8 +20,7 @@ evaluatePop <- function(population, funct){
   popSize <- dim(population)[1]
   popFitness <- matrix(0, nrow = popSize)
   for (i in 1:popSize){
-    #popFitness[i,] <- evaluateX2(population[i,])
-    popFitness[i,] <- evaluateDeJong1(population[i,])
+    popFitness[i,] <- evaluateDeJong5(population[i,])
   }
   return(popFitness)
 }
@@ -91,7 +90,7 @@ populationStats <- function(population, gen){
 populationReport <- function(popStats){
   report[gen+1, ] <<- popStats[1,]
   output <- sprintf("%6d %15.4f %11.4f %11.4f %11.4f", popStats$Gen, popStats$Min, popStats$Mean, popStats$Max, popStats$Sum)
-  #print(output)
+  print(output)
 }
 
 
