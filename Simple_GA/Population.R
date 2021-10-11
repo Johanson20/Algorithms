@@ -62,9 +62,8 @@ xover2Pt <- function(population, pXover, popFitness, popStats){
     child2 <- parent2
     parentSize <- length(parent1)
     if (flip(pXover)){
-      xp1 <- randInt(1, parentSize)
-      xp2 <- randInt(xp1, parentSize)
-      subBits <- seq(xp1, xp2)
+      xp <- sample(c(1:parentSize), 2, replace = F)
+      subBits <- seq(xp[1], xp[2])
       child1[subBits] <- parent2[subBits]
       child2[subBits] <- parent1[subBits]
     }
